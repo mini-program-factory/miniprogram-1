@@ -1,0 +1,27 @@
+/* pages/welcome/welcome.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 160rpx;
+  text-align: center;
+}
+
+.motto {
+  margin-top: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.signin-button {
+  margin-top: 200rpx;
+}
+
+page {
+  background-color: #b3d4db
+}

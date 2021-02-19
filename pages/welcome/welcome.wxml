@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="avatar">
+    <l-avatar size="160" open-data="{{['userAvatarUrl','userNickName']}}" placement="bottom" />
+  </view>
+  <text class="motto">Hello 2021</text>
+  <view class="signin-button">
+    <l-button>
+      登入</l-button>
+  </view>
+</view>
