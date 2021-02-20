@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/welcome/welcome"
+    "pages/welcome/welcome",
+    "pages/posts/posts"
   ],
   "sitemapLocation": "sitemap3.json",
   "usingComponents": {
     "l-button": "/miniprogram_npm/lin-ui/button/index"
   },
   "window": {
-    "navigationBarBackgroundColor": "#b3d4db"
+    "navigationBarBackgroundColor": "#C22A1E"
   }
 }
