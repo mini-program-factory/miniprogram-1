@@ -10,21 +10,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-    post: {}
+    post: {},
+    collected: false,
+    _pid: null
   },
 
+
+  toggleCollect: function () {
+
+
+    const {
+      collected,
+      _pid: postId
+    } = this.data
+
+
+
+    wx.setStorageSync(postId, {
+      collected: !collected
+    })
+
+    this.setData({
+      collected: !collected
+    })
+
+    wx.showToast({
+      title: !collected ? '收藏成功' : '取消收藏',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function ({
     postId = null
   }) {
+
     const post = postList.find(({
       postId: id
     }) => id === Number(postId))
+
+    const {
+      collected
+    } = wx.getStorageSync(postId)
+
     this.setData({
+      _pid: postId,
+      collected,
       post
     })
+
+
   },
 
   /**

@@ -9,8 +9,10 @@
   <text class="title">{{post.title}}</text>
   <view class="more">
     <view class="circle-images">
-      <image class="icon" src="/images/icon/collection-anti.png"></image>
-      <image class="icon" src="/images/icon/share.png"></image>
+
+      <image bindtap="toggleCollect" class="icon"
+        src="{{collected?'/images/icon/collection.png':'/images/icon/collection-anti.png'}}"></image>
+      <image bindtap="clickShare" class="icon" src="/images/icon/share.png"></image>
     </view>
     <div class="horizon"></div>
   </view>
