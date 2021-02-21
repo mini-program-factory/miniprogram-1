@@ -1,14 +1,14 @@
 <view class="container">
   <swiper indicator-dots autoplay>
-    <view wx:for="{{swiperImages}}">
+    <view wx:for="{{swiperImages}}" wx:key="index">
       <swiper-item>
         <image src="{{item}}"></image>
       </swiper-item>
     </view>
   </swiper>
 
-  <view wx:for="{{posts}}" wx:for-item="post">
-    <view class="post-container">
+  <block wx:for="{{posts}}" wx:for-item="post" wx:key="index">
+    <view class="post-container" bindtap="handlePostClick" data-post-id="{{post.postId}}">
       <view class="post-header">
         <image src="{{post.avatar}}"></image>
         <text>{{post.date}}</text>
@@ -24,7 +24,7 @@
         <text>{{post.reading}}</text>
       </view>
     </view>
-  </view>
+  </block>
 
 
 

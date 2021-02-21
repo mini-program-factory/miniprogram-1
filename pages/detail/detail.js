@@ -1,7 +1,8 @@
-// pages/posts/posts.js
+// pages/detail/detail.js
 const {
   postList
 } = require('../../data/data')
+
 
 Page({
 
@@ -9,16 +10,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    posts: []
+    post: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function ({
+    postId = null
+  }) {
+    const post = postList.find(({
+      postId: id
+    }) => id === Number(postId))
     this.setData({
-      swiperImages: ['/images/bestplayers.png', '/images/lpl.png', '/images/jumpfly.png'],
-      posts: postList
+      post
     })
   },
 
@@ -69,15 +74,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  handlePostClick: ({
-    currentTarget
-  }) => {
-    wx.navigateTo({
-      url: `/pages/detail/detail?postId=${currentTarget.dataset.postId}`,
-
-    })
-  },
-
+  }
 })

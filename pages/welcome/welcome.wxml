@@ -4,7 +4,7 @@
   </view>
   <text class="motto">Hello 2021</text>
   <view class="signin-button">
-    <l-button>
+    <l-button bindtap="onBtnTap">
       登入</l-button>
   </view>
 </view>

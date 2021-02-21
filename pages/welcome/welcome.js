@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  onBtnTap: () => {
+    wx.redirectTo({
+      url: '/pages/posts/posts',
+    })
+  },
+
+ 
 })
