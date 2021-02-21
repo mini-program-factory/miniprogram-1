@@ -1,11 +1,15 @@
 // pages/posts/posts.js
+const {
+  postList
+} = require('../../data/data')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    posts: []
   },
 
   /**
@@ -13,7 +17,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      swiperImages: ['/images/bestplayers.png', '/images/lpl.png', '/images/jumpfly.png']
+      swiperImages: ['/images/bestplayers.png', '/images/lpl.png', '/images/jumpfly.png'],
+      posts: postList
     })
   },
 

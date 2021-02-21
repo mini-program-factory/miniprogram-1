@@ -7,27 +7,26 @@
     </view>
   </swiper>
 
-  <view class="post-container">
-    <view class="post-header">
-      <image src="/images/avatar/5.png"></image>
-      <text>Nov 20 2020</text>
-    </view>
-    <text class="post-title">TITLE 0000000001</text>
-    <image class="post-image" src="/images/lpl.png"></image>
-    <text class="post-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi laboriosam mollitia id
-      veniam ad asperiores,
-      inventore odio molestias facere sint nemo aperiam ipsam excepturi officia iste quibusdam qui ut esse?
-    </text>
-    <view class="post-rate">
-      <view>
-        <image src="/images/icon/none-star.png"></image>
-        <text>92</text>
+  <view wx:for="{{posts}}" wx:for-item="post">
+    <view class="post-container">
+      <view class="post-header">
+        <image src="{{post.avatar}}"></image>
+        <text>{{post.date}}</text>
       </view>
-      <view>
-        <image src="/images/icon/view.png"></image>
-        <text>102</text>
+      <text class="post-title">{{post.title}}</text>
+      <image class="post-image" src="{{post.imgSrc}}"></image>
+      <text class="post-content">{{post.content}}
+      </text>
+      <view class="post-rate">
+        <l-icon class="rate-icon" size="32" color="#666" name="favor"></l-icon>
+        <text>{{post.collection}}</text>
+        <l-icon class="rate-icon" size="32" color="#666" name="eye"></l-icon>
+        <text>{{post.reading}}</text>
       </view>
     </view>
   </view>
+
+
+
 
 </view>
