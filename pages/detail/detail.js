@@ -3,6 +3,8 @@ const {
   postList
 } = require('../../data/data')
 
+const app = getApp()
+
 
 Page({
 
@@ -12,19 +14,58 @@ Page({
   data: {
     post: {},
     collected: false,
+    isPlaying: false,
     _pid: null
   },
 
 
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function ({
+    postId = null
+  }) {
+    const post = postList.find(({
+      postId: id
+    }) => id === Number(postId))
+
+    const {
+      collected
+    } = wx.getStorageSync(postId)
+
+
+    wx.getBackgroundAudioManager().onPlay(() => {
+      console.log('on music play')
+      app.isPlaying = true
+      this.setData({
+        isPlaying: true
+      })
+    })
+
+    wx.getBackgroundAudioManager().onPause(() => {
+      console.log('on music pause')
+      app.isPlaying = false
+      this.setData({
+        isPlaying: false
+      })
+    })
+
+    this.setData({
+      _pid: postId,
+      collected,
+      post,
+      isPlaying: app.isPlaying
+    })
+
+
+  },
+
   toggleCollect: function () {
-
-
     const {
       collected,
       _pid: postId
     } = this.data
-
-
 
     wx.setStorageSync(postId, {
       collected: !collected
@@ -38,28 +79,24 @@ Page({
       title: !collected ? '收藏成功' : '取消收藏',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function ({
-    postId = null
-  }) {
-
-    const post = postList.find(({
-      postId: id
-    }) => id === Number(postId))
-
+  async playBGMusic() {
     const {
-      collected
-    } = wx.getStorageSync(postId)
+      isPlaying,
+      post
+    } = this.data
+    const bgmMgr = wx.getBackgroundAudioManager()
+
+    if (!isPlaying) {
+      bgmMgr.src = post.music.url
+      bgmMgr.title = post.music.title
+      bgmMgr.play()
+    } else {
+      bgmMgr.pause()
+    }
 
     this.setData({
-      _pid: postId,
-      collected,
-      post
+      isPlaying: !isPlaying
     })
-
-
   },
 
   /**

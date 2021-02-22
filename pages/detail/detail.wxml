@@ -1,6 +1,8 @@
 <!--pages/detail/detail.wxml-->
 <view class="container">
-  <image class="head-image" src="{{post.imgSrc}}"></image>
+  <image class="head-image" src="{{post.imgSrc}}" />
+  <image class="music-btn" bindtap="playBGMusic"
+    src="{{isPlaying?'/images/music/music-stop.png':'/images/music/music-start.png'}}" />
   <view class="subtitle">
     <image class="avatar" src="{{post.avatar}}"></image>
     <text class="author">{{post.author}}</text>
@@ -9,7 +11,6 @@
   <text class="title">{{post.title}}</text>
   <view class="more">
     <view class="circle-images">
-
       <image bindtap="toggleCollect" class="icon"
         src="{{collected?'/images/icon/collection.png':'/images/icon/collection-anti.png'}}"></image>
       <image bindtap="clickShare" class="icon" src="/images/icon/share.png"></image>

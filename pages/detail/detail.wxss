@@ -71,3 +71,12 @@
   padding: 20rpx;
   line-height: 50rpx;
 }
+
+.music-btn {
+  width: 100rpx;
+  height: 100rpx;
+  opacity: 0.6;
+  position: absolute;
+  top: 170rpx;
+  left: calc(50% - 50rpx);
+}

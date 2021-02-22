@@ -11,5 +11,9 @@
   },
   "window": {
     "navigationBarBackgroundColor": "#C22A1E"
-  }
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ]
 }
