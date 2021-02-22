@@ -1,0 +1,16 @@
+<view class="post-container" bindtap="handlePostClick" data-post-id="{{post.postId}}">
+  <view class="post-header">
+    <image src="{{post.avatar}}"></image>
+    <text>{{post.date}}</text>
+  </view>
+  <text class="post-title">{{post.title}}</text>
+  <image class="post-image" src="{{post.imgSrc}}"></image>
+  <text class="post-content">{{post.content}}
+  </text>
+  <view class="post-rate">
+    <l-icon class="rate-icon" size="32" color="#666" name="favor"></l-icon>
+    <text>{{post.collection}}</text>
+    <l-icon class="rate-icon" size="32" color="#666" name="eye"></l-icon>
+    <text>{{post.reading}}</text>
+  </view>
+</view>

@@ -9,17 +9,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    posts: []
+    posts: postList
+  },
+
+  clickCarouselItem(event) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?postId=${event.currentTarget.dataset.postId}`,
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      swiperImages: ['/images/bestplayers.png', '/images/lpl.png', '/images/jumpfly.png'],
-      posts: postList
-    })
+
   },
 
   /**
@@ -71,13 +74,6 @@ Page({
 
   },
 
-  handlePostClick: ({
-    currentTarget
-  }) => {
-    wx.navigateTo({
-      url: `/pages/detail/detail?postId=${currentTarget.dataset.postId}`,
 
-    })
-  },
 
 })

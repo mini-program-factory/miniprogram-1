@@ -23,6 +23,11 @@
           "pathName": "pages/detail/detail",
           "query": "postId=1",
           "scene": null
+        },
+        {
+          "name": "pages/movie/movie",
+          "pathName": "pages/movie/movie",
+          "scene": null
         }
       ]
     }

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "c-post": "/components/post/index"
+  },
   "navigationBarTitleText": "文章列表"
 }
