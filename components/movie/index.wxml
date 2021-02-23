@@ -1,0 +1,8 @@
+<view class="container">
+  <image src="{{movie.images.large}}" class="movie-image"></image>
+  <text class="movie-name">{{movie.title}}</text>
+  <view class="movie-rate-wrap">
+    <l-rate size="22" score="{{movie.rating.stars /10}}" />
+    <text class="movie-score">{{movie.rating.stars /10}}</text>
+  </view>
+</view>

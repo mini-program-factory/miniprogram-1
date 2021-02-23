@@ -3,7 +3,7 @@
     "pages/welcome/welcome",
     "pages/posts/posts",
     "pages/detail/detail",
-    "pages/movie/movie"
+    "pages/movies/movies"
   ],
   "sitemapLocation": "sitemap3.json",
   "usingComponents": {
@@ -30,7 +30,7 @@
         "text": "阅读"
       },
       {
-        "pagePath": "pages/movie/movie",
+        "pagePath": "pages/movies/movies",
         "iconPath": "images/tab/movie.png",
         "selectedIconPath": "images/tab/movie@highlight.png",
         "text": "电影"

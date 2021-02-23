@@ -2,5 +2,6 @@ App({
   onLaunch() {
     console.log('app launch')
   },
-  isPlaying: false
+  isPlaying: false,
+  endpoint: "http://t.talelin.com/v2/movie/"
 })

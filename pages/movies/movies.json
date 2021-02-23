@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "MoviesList":"/components/movies-list/index",
+    "Movie":"/components/movie/index"
+  }
+}

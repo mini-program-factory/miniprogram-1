@@ -1,0 +1,14 @@
+<view class="container c-class">
+  <view class="title-container">
+    <text>{{titleName}}</text>
+    <text class="more">更多 ></text>
+  </view>
+
+  <view class="movies-container">
+    <view wx:for="{{data}}" wx:key="index">
+      <Movie movie="{{item}}" />
+    </view>
+
+  </view>
+
+</view>
